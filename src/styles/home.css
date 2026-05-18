@@ -208,7 +208,13 @@
 
 .services {
   padding: 120px 0;
-  background: #f8fafc;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(124, 58, 237, 0.06),
+      transparent 30%
+    ),
+    #f8fafc;
 }
 
 .services-grid {
@@ -218,27 +224,57 @@
 }
 
 .service-card {
-  background: white;
-  padding: 40px;
-  border-radius: 28px;
-  border: 1px solid #edf0f3;
-  transition: 0.35s;
+  position: relative;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  padding: 42px;
+  border-radius: 30px;
+  border: 1px solid rgba(124, 58, 237, 0.08);
+  transition: 0.4s;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #7c3aed, #9333ea);
 }
 
 .service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.08);
+  transform: translateY(-14px);
+  box-shadow: 0 30px 80px rgba(124, 58, 237, 0.12);
+  border-color: rgba(124, 58, 237, 0.18);
 }
 
 .service-card h3 {
-  font-size: 26px;
+  font-size: 30px;
   margin-bottom: 18px;
   color: #0f172a;
+  font-weight: 800;
 }
 
 .service-card p {
   color: #64748b;
-  line-height: 1.8;
+  line-height: 1.9;
+  font-size: 17px;
+}
+
+.service-icon {
+  width: 78px;
+  height: 78px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  background: linear-gradient(135deg, #7c3aed, #9333ea);
+  color: white;
+  box-shadow: 0 15px 35px rgba(124, 58, 237, 0.25);
 }
 
 .portfolio {

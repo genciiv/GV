@@ -3,7 +3,7 @@ function Footer() {
     <footer className="footer">
       <div className="container footer-container">
         <div className="footer-left">
-          <h2>WebStudio</h2>
+          <h2>Genci V</h2>
 
           <p>Website moderne dhe profesionale për biznese.</p>
         </div>

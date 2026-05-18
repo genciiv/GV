@@ -1,26 +1,41 @@
+import {
+  Monitor,
+  ShoppingCart,
+  Search,
+  Megaphone,
+  Palette,
+  ShieldCheck,
+} from "lucide-react";
+
 function Services() {
   const services = [
     {
+      icon: <Monitor size={34} />,
       title: "Krijim Website",
       desc: "Website moderne dhe profesionale për biznese.",
     },
     {
+      icon: <ShoppingCart size={34} />,
       title: "E-Commerce",
       desc: "Dyqane online me pagesa dhe menaxhim produktesh.",
     },
     {
+      icon: <Search size={34} />,
       title: "SEO Optimizim",
       desc: "Optimizim për Google dhe shpejtësi maksimale.",
     },
     {
+      icon: <Megaphone size={34} />,
       title: "Menaxhim Social Media",
       desc: "Rritje e prezencës dhe reklamim profesional.",
     },
     {
+      icon: <Palette size={34} />,
       title: "UI/UX Design",
       desc: "Dizajn modern dhe eksperiencë perfekte përdorimi.",
     },
     {
+      icon: <ShieldCheck size={34} />,
       title: "Mirëmbajtje Website",
       desc: "Update, siguri dhe suport teknik.",
     },
@@ -36,11 +51,13 @@ function Services() {
         </div>
 
         <div className="services-grid">
-          {services.map((item, index) => (
+          {services.map((service, index) => (
             <div className="service-card" key={index}>
-              <h3>{item.title}</h3>
+              <div className="service-icon">{service.icon}</div>
 
-              <p>{item.desc}</p>
+              <h3>{service.title}</h3>
+
+              <p>{service.desc}</p>
             </div>
           ))}
         </div>
