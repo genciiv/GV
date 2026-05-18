@@ -1,8 +1,17 @@
+import { motion } from "framer-motion";
+
 function Hero() {
   return (
     <section className="hero" id="home">
+      <div className="blur blur-1"></div>
+      <div className="blur blur-2"></div>
       <div className="container hero-container">
-        <div className="hero-left">
+        <motion.div
+          className="hero-left"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <span className="hero-badge">WEB AGENCY</span>
 
           <h1>
@@ -23,9 +32,14 @@ function Hero() {
               Shiko Projektet
             </a>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="hero-right">
+        <motion.div
+          className="hero-right"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <div className="mockup-card">
             <div className="mockup-top">
               <span></span>
@@ -38,7 +52,7 @@ function Hero() {
               <p>Website modern që sjell rezultate.</p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
