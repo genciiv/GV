@@ -4,16 +4,21 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
+  "dev": "vite",
+  "server": "nodemon server/server.js",
+  "build": "vite build",
+  "lint": "eslint .",
+  "preview": "vite preview"
+},
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
     "emailjs-com": "^3.2.0",
+    "express": "^5.2.1",
     "framer-motion": "^12.39.0",
     "lucide-react": "^1.16.0",
+    "openai": "^6.38.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6"
   },
@@ -26,6 +31,7 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.6.0",
+    "nodemon": "^3.1.14",
     "vite": "^8.0.12"
   }
 }
