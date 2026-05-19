@@ -2007,3 +2007,68 @@ button,
     display: none;
   }
 }
+
+
+/* LIGHT PREMIUM SERVICES */
+.premium-service {
+  background: rgba(255,255,255,0.88) !important;
+  border: 1px solid rgba(124,58,237,0.10) !important;
+  box-shadow: 0 14px 40px rgba(15,23,42,0.05);
+}
+
+.premium-service::before {
+  background: linear-gradient(90deg, #7c3aed, #a855f7) !important;
+  height: 4px;
+  inset: 0 auto auto 0;
+}
+
+.service-card {
+  background: rgba(255,255,255,0.88) !important;
+  border: 1px solid rgba(124,58,237,0.10) !important;
+}
+
+.service-card h3 {
+  color: #0f172a !important;
+}
+
+.service-card p {
+  color: #64748b !important;
+}
+
+.service-points {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.service-points li {
+  color: #475569 !important;
+  font-size: 14px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.service-points li::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: #7c3aed;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+
+.dark-mode .service-card {
+  background: #0f172a !important;
+}
+
+.dark-mode .service-card h3 {
+  color: #f8fafc !important;
+}
+
+.dark-mode .service-card p,
+.dark-mode .service-points li {
+  color: #cbd5e1 !important;
+}
