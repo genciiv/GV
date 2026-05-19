@@ -12,14 +12,26 @@ import Stats from "./components/Stats";
 import Pricing from "./components/Pricing";
 import FAQ from "./components/FAQ";
 import ContactForm from "./components/ContactForm";
+import ThemeToggle from "./components/ui/ThemeToggle";
+import LoadingScreen from "./components/ui/LoadingScreen";
+import MouseFollower from "./components/ui/MouseFollower";
+import AnimatedGrid from "./components/ui/AnimatedGrid";
+import ChatBot from "./components/ui/ChatBot";
 
 import "./styles/home.css";
 
 function App() {
   return (
     <>
+    <LoadingScreen />
+    <AnimatedGrid />
+    <MouseFollower />
+    <ChatBot />
+
       <Navbar />
 
+      <ThemeToggle />
+      
       <main>
         <Hero />
         <Stats />

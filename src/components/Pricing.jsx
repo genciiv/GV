@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 function Pricing() {
   const plans = [
     {
@@ -10,12 +12,7 @@ function Pricing() {
       name: "Pro",
       price: "299€",
       desc: "Për faqe më serioze dhe profesionale.",
-      features: [
-        "Deri 6 faqe",
-        "SEO bazik",
-        "Animacione",
-        "Optimizim shpejtësie",
-      ],
+      features: ["Deri 6 faqe", "SEO bazik", "Animacione", "Optimizim shpejtësie"],
       popular: true,
     },
     {
@@ -36,13 +33,15 @@ function Pricing() {
 
         <div className="pricing-grid">
           {plans.map((plan, index) => (
-            <div
+            <motion.div
               className={`pricing-card ${plan.popular ? "popular" : ""}`}
               key={index}
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: index * 0.1 }}
+              viewport={{ once: true }}
             >
-              {plan.popular && (
-                <span className="popular-badge">Më e zgjedhura</span>
-              )}
+              {plan.popular && <span className="popular-badge">Më e zgjedhura</span>}
 
               <h3>{plan.name}</h3>
               <h2>{plan.price}</h2>
@@ -55,7 +54,7 @@ function Pricing() {
               </ul>
 
               <a href="#contact">Kërko Ofertë</a>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
