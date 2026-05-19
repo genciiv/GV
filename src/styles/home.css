@@ -1786,3 +1786,224 @@ button,
 .dark-mode .delivery-box {
   border-color: rgba(255,255,255,0.18);
 }
+
+
+/* HERO FLOATING ICONS */
+.floating-icon {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.12);
+  backdrop-filter: blur(14px);
+  color: #7c3aed;
+  font-size: 22px;
+  box-shadow: 0 15px 45px rgba(124, 58, 237, 0.18);
+  animation: floatY 4s ease-in-out infinite;
+  z-index: 1;
+}
+
+.icon-1 {
+  top: 120px;
+  left: 7%;
+}
+
+.icon-2 {
+  bottom: 150px;
+  left: 5%;
+  animation-delay: 1s;
+}
+
+.icon-3 {
+  top: 150px;
+  right: 7%;
+  animation-delay: 2s;
+}
+
+.icon-4 {
+  bottom: 170px;
+  right: 8%;
+  animation-delay: 3s;
+}
+
+@keyframes floatY {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+/* SCROLL INDICATOR */
+.scroll-indicator {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 48px;
+  border-radius: 999px;
+  border: 2px solid rgba(124, 58, 237, 0.25);
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+  z-index: 3;
+}
+
+.scroll-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #7c3aed;
+  animation: scrollDot 1.8s infinite;
+}
+
+@keyframes scrollDot {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+}
+
+.dark-mode .floating-icon {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #c084fc;
+}
+
+.dark-mode .scroll-indicator {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.dark-mode .scroll-dot {
+  background: #c084fc;
+}
+
+@media (max-width: 768px) {
+  .floating-icon {
+    display: none;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+/* GLOBAL FLOATING DECOR */
+.floating-decor {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.decor-icon {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.12);
+  backdrop-filter: blur(14px);
+  color: #7c3aed;
+  font-size: 18px;
+  box-shadow: 0 15px 45px rgba(124, 58, 237, 0.14);
+  animation: floatY 4.5s ease-in-out infinite;
+}
+
+/* SERVICES AREA */
+.decor-services .decor-a {
+  top: 70px;
+  left: 6%;
+}
+
+.decor-services .decor-b {
+  top: 260px;
+  right: 7%;
+  animation-delay: 1s;
+}
+
+.decor-services .decor-c {
+  top: 480px;
+  left: 12%;
+  animation-delay: 2s;
+}
+
+/* PORTFOLIO AREA */
+.decor-portfolio .decor-a {
+  top: 80px;
+  right: 10%;
+}
+
+.decor-portfolio .decor-b {
+  top: 340px;
+  left: 5%;
+  animation-delay: 1.2s;
+}
+
+.decor-portfolio .decor-c {
+  top: 560px;
+  right: 6%;
+  animation-delay: 2.2s;
+}
+
+/* PRICING AREA */
+.decor-pricing .decor-a {
+  top: 100px;
+  left: 8%;
+}
+
+.decor-pricing .decor-b {
+  top: 300px;
+  right: 8%;
+  animation-delay: 1s;
+}
+
+.decor-pricing .decor-c {
+  top: 620px;
+  left: 48%;
+  animation-delay: 2s;
+}
+
+/* CONTACT AREA */
+.decor-contact .decor-a {
+  top: 90px;
+  right: 12%;
+}
+
+.decor-contact .decor-b {
+  top: 330px;
+  left: 7%;
+  animation-delay: 1s;
+}
+
+.decor-contact .decor-c {
+  top: 620px;
+  right: 8%;
+  animation-delay: 2s;
+}
+
+.dark-mode .decor-icon {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #c084fc;
+}
+
+@media (max-width: 768px) {
+  .floating-decor {
+    display: none;
+  }
+}

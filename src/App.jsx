@@ -16,6 +16,7 @@ import LoadingScreen from "./components/ui/LoadingScreen";
 import MouseFollower from "./components/ui/MouseFollower";
 import AnimatedGrid from "./components/ui/AnimatedGrid";
 import ChatBot from "./components/ui/ChatBot";
+import FloatingDecor from "./components/ui/FloatingDecor";
 
 import "./styles/home.css";
 
@@ -33,14 +34,18 @@ function App() {
       
       <main>
         <Hero />
+        <FloatingDecor variant="services" />
         <Stats />
         <About />
         <Services />
+        <FloatingDecor variant="portfolio" />
         <WhyChoose />
         <Testimonials />
         <Process />
+        <FloatingDecor variant="pricing" />
         <Portfolio />
         <Pricing />
+        <FloatingDecor variant="contact" />
         <FAQ />
         <ContactForm />
       </main>

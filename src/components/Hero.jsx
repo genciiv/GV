@@ -3,6 +3,11 @@ import { motion } from "framer-motion";
 function Hero() {
   return (
     <section className="hero" id="home">
+      <div className="floating-icon icon-1">✦</div>
+      <div className="floating-icon icon-2">⚡</div>
+      <div className="floating-icon icon-3">◎</div>
+      <div className="floating-icon icon-4">◈</div>
+
       <div className="container hero-grid">
         <motion.div
           className="hero-left"
@@ -15,17 +20,16 @@ function Hero() {
           </span>
 
           <h1>
-            Ndërtojmë <span>website premium</span> për
-            biznese moderne
+            Ndërtojmë <span>website premium</span> për biznese moderne
           </h1>
 
           <p>
-            Krijojmë website profesionale, moderne dhe të
-            optimizuara për performancë, SEO dhe konvertime.
+            Krijojmë website profesionale, moderne dhe të optimizuara për
+            performancë, SEO dhe konvertime.
           </p>
 
           <div className="hero-buttons">
-            <a href="#contact" className="primary-btn">
+            <a href="#contact-form" className="primary-btn">
               Fillo Projektin
             </a>
 
@@ -59,21 +63,18 @@ function Hero() {
           transition={{ duration: 0.7 }}
         >
           <div className="hero-card">
-            <img
-              src="/projects/project5.png"
-              alt="preview"
-            />
+            <img src="/projects/project5.png" alt="Preview website" />
           </div>
 
-          <div className="floating-card one">
-            ⚡ SEO Optimized
-          </div>
+          <div className="floating-card one">⚡ SEO Optimized</div>
 
-          <div className="floating-card two">
-            🔥 Premium Design
-          </div>
+          <div className="floating-card two">🔥 Premium Design</div>
         </motion.div>
       </div>
+
+      <a href="#services" className="scroll-indicator" aria-label="Scroll">
+        <div className="scroll-dot"></div>
+      </a>
     </section>
   );
 }
