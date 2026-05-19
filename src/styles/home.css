@@ -1633,3 +1633,156 @@ button,
 .theme-toggle {
   transform: scale(0.82);
 }
+
+
+.premium-service {
+  background: #071126;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 28px;
+  padding: 38px;
+  transition: 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-service::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right,
+    rgba(124,58,237,0.18),
+    transparent 40%);
+}
+
+.premium-service:hover {
+  transform: translateY(-10px);
+  border-color: rgba(124,58,237,0.5);
+  box-shadow:
+    0 25px 70px rgba(124,58,237,0.18);
+}
+
+.premium-service h3 {
+  font-size: 28px;
+  color: white;
+  margin-top: 24px;
+  margin-bottom: 18px;
+}
+
+.premium-service p {
+  color: #94a3b8;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.service-points {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-points li {
+  color: #cbd5e1;
+  font-size: 15px;
+  position: relative;
+  padding-left: 22px;
+}
+
+.service-points li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #7c3aed;
+  position: absolute;
+  left: 0;
+  top: 9px;
+}
+
+.service-icon {
+  width: 78px;
+  height: 78px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(135deg,#7c3aed,#9333ea);
+  color: white;
+  box-shadow:
+    0 10px 35px rgba(124,58,237,0.4);
+}
+
+
+/* PRICING DETAILED CARDS */
+.pricing-card {
+  padding: 26px;
+  border-radius: 24px;
+}
+
+.pricing-card .plan-desc {
+  min-height: 70px;
+  margin-bottom: 22px;
+}
+
+.pricing-card h2 {
+  font-size: 42px;
+  color: #0f172a;
+}
+
+.price-line {
+  height: 1px;
+  width: 100%;
+  background: rgba(15,23,42,0.16);
+  margin: 24px 0;
+}
+
+.pricing-card ul {
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.pricing-card li {
+  position: relative;
+  padding-left: 18px;
+  line-height: 1.45;
+  font-size: 14px;
+}
+
+.pricing-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #7c3aed;
+  font-weight: 900;
+}
+
+.pricing-grid {
+  gap: 20px;
+}
+
+.delivery-box {
+  border: 1px solid rgba(15,23,42,0.15);
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 18px;
+  color: #0f172a;
+  font-size: 13px;
+}
+
+.dark-mode .pricing-card h2,
+.dark-mode .delivery-box {
+  color: #f8fafc;
+}
+
+.dark-mode .price-line {
+  background: rgba(255,255,255,0.18);
+}
+
+.dark-mode .delivery-box {
+  border-color: rgba(255,255,255,0.18);
+}

@@ -25,7 +25,7 @@ function ContactForm() {
   };
 
   return (
-    <section className="contact-form-section" id="contact-form">
+    <section className="contact-form-section" id="contact">
       <div className="container">
         <div className="form-wrapper">
           <div className="section-title">

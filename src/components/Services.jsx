@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import {
   Monitor,
   ShoppingCart,
@@ -10,38 +9,113 @@ import {
 
 function Services() {
   const services = [
-    { icon: <Monitor size={34} />, title: "Krijim Website", desc: "Website moderne dhe profesionale për biznese." },
-    { icon: <ShoppingCart size={34} />, title: "E-Commerce", desc: "Dyqane online me pagesa dhe menaxhim produktesh." },
-    { icon: <Search size={34} />, title: "SEO Optimizim", desc: "Optimizim për Google dhe shpejtësi maksimale." },
-    { icon: <Megaphone size={34} />, title: "Menaxhim Social Media", desc: "Rritje e prezencës dhe reklamim profesional." },
-    { icon: <Palette size={34} />, title: "UI/UX Design", desc: "Dizajn modern dhe eksperiencë perfekte përdorimi." },
-    { icon: <ShieldCheck size={34} />, title: "Mirëmbajtje Website", desc: "Update, siguri dhe suport teknik." },
+    {
+      icon: <Monitor size={34} />,
+      title: "Web Development",
+      desc:
+        "Website moderne dhe profesionale të ndërtuara me teknologji moderne për performancë maksimale.",
+      points: [
+        "React & Next.js",
+        "SEO Optimized",
+        "Mobile First",
+      ],
+    },
+
+    {
+      icon: <Megaphone size={34} />,
+      title: "Social Media Ads",
+      desc:
+        "Menaxhim reklamash profesionale për Instagram dhe Facebook për më shumë klientë.",
+      points: [
+        "Instagram Ads",
+        "Facebook Campaigns",
+        "Audience Targeting",
+      ],
+    },
+
+    {
+      icon: <Palette size={34} />,
+      title: "UI/UX Design",
+      desc:
+        "Dizajn modern dhe eksperiencë premium për përdoruesit e website-it tuaj.",
+      points: [
+        "User Experience",
+        "Wireframes",
+        "Premium Interface",
+      ],
+    },
+
+    {
+      icon: <Search size={34} />,
+      title: "SEO Optimization",
+      desc:
+        "Optimizim profesional për Google dhe shpejtësi të lartë të faqes.",
+      points: [
+        "Core Web Vitals",
+        "Speed Optimization",
+        "Google Ranking",
+      ],
+    },
+
+    {
+      icon: <ShoppingCart size={34} />,
+      title: "E-Commerce",
+      desc:
+        "Dyqane online moderne me pagesa online dhe menaxhim produktesh.",
+      points: [
+        "Payments",
+        "Inventory",
+        "Analytics Dashboard",
+      ],
+    },
+
+    {
+      icon: <ShieldCheck size={34} />,
+      title: "Website Maintenance",
+      desc:
+        "Siguri, update dhe mirëmbajtje profesionale për website-in tuaj.",
+      points: [
+        "Security",
+        "Daily Backups",
+        "Technical Support",
+      ],
+    },
   ];
 
   return (
     <section className="services" id="services">
       <div className="container">
+
         <div className="section-title">
           <h2>Shërbimet Tona</h2>
-          <p>Zgjidhje moderne për biznesin tuaj.</p>
+
+          <p>
+            Zgjidhje moderne digitale për biznese serioze.
+          </p>
         </div>
 
         <div className="services-grid">
           {services.map((service, index) => (
-            <motion.div
-              className="service-card"
-              key={index}
-              initial={{ opacity: 0, y: 35 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: index * 0.08 }}
-              viewport={{ once: true }}
-            >
-              <div className="service-icon">{service.icon}</div>
+            <div className="service-card premium-service" key={index}>
+
+              <div className="service-icon">
+                {service.icon}
+              </div>
+
               <h3>{service.title}</h3>
+
               <p>{service.desc}</p>
-            </motion.div>
+
+              <ul className="service-points">
+                {service.points.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
+
+            </div>
           ))}
         </div>
+
       </div>
     </section>
   );
