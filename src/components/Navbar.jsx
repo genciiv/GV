@@ -6,7 +6,7 @@ function Navbar() {
   const closeMenu = () => setOpen(false);
 
   return (
-    <header className="navbar">
+    <header className="navbar glass-nav">
       <div className="container nav-container">
         <div className="logo">
           <a href="#home" onClick={closeMenu}>

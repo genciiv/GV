@@ -3,54 +3,74 @@ import { motion } from "framer-motion";
 function Hero() {
   return (
     <section className="hero" id="home">
-      <div className="blur blur-1"></div>
-      <div className="blur blur-2"></div>
-      <div className="container hero-container">
+      <div className="container hero-grid">
         <motion.div
           className="hero-left"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
         >
-          <span className="hero-badge">WEB AGENCY</span>
+          <span className="hero-badge">
+            🚀 Web Design • Branding • Marketing
+          </span>
 
           <h1>
-            Ndërtojmë Website <span>Moderne</span>
+            Ndërtojmë <span>website premium</span> për
+            biznese moderne
           </h1>
 
           <p>
-            Krijojmë faqe profesionale, të shpejta dhe të optimizuara për
-            biznesin tuaj. Dizajn elegant, performancë maksimale dhe prezencë
-            serioze online.
+            Krijojmë website profesionale, moderne dhe të
+            optimizuara për performancë, SEO dhe konvertime.
           </p>
 
-          <div className="hero-actions">
-            <a href="#contact" className="hero-btn">
+          <div className="hero-buttons">
+            <a href="#contact" className="primary-btn">
               Fillo Projektin
             </a>
-            <a href="#portfolio" className="hero-outline">
-              Shiko Projektet
+
+            <a href="#portfolio" className="secondary-btn">
+              Shiko Portfolio
             </a>
+          </div>
+
+          <div className="hero-stats">
+            <div>
+              <strong>50+</strong>
+              <span>Projekte</span>
+            </div>
+
+            <div>
+              <strong>100%</strong>
+              <span>Responsive</span>
+            </div>
+
+            <div>
+              <strong>24/7</strong>
+              <span>Support</span>
+            </div>
           </div>
         </motion.div>
 
         <motion.div
           className="hero-right"
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.7 }}
         >
-          <div className="mockup-card">
-            <div className="mockup-top">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+          <div className="hero-card">
+            <img
+              src="/projects/project5.png"
+              alt="preview"
+            />
+          </div>
 
-            <div className="mockup-content">
-              <h3>Digital Experience</h3>
-              <p>Website modern që sjell rezultate.</p>
-            </div>
+          <div className="floating-card one">
+            ⚡ SEO Optimized
+          </div>
+
+          <div className="floating-card two">
+            🔥 Premium Design
           </div>
         </motion.div>
       </div>
