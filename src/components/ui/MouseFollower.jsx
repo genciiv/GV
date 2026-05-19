@@ -13,13 +13,17 @@ function MouseFollower() {
   }, []);
 
   return (
-    <div
-      className="mouse-follower"
-      style={{
-        left: pos.x,
-        top: pos.y,
-      }}
-    />
+    <>
+      <div
+        className="cursor-dot"
+        style={{ left: pos.x, top: pos.y }}
+      ></div>
+
+      <div
+        className="cursor-glow"
+        style={{ left: pos.x, top: pos.y }}
+      ></div>
+    </>
   );
 }
 
