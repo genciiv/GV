@@ -36,6 +36,14 @@ function App() {
       </main>
 
       <Footer />
+      <a
+      href="https://wa.me/355692291041"
+      className="whatsapp-float"
+      target="_blank"
+      rel="noreferrer"
+    >
+      WhatsApp
+    </a>
     </>
   );
 }
