@@ -2,17 +2,68 @@ import { useState } from "react";
 
 function ChatBot() {
   const [open, setOpen] = useState(false);
+
   const [messages, setMessages] = useState([
     {
       from: "bot",
-      text: "Përshëndetje! Si mund t’ju ndihmojmë me website-in tuaj?",
+      text: "Përshëndetje! Si mund t’ju ndihmoj me website-in tuaj?",
     },
   ]);
 
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const sendMessage = async (e) => {
+  const getBotReply = (message) => {
+    const text = message.toLowerCase();
+
+    if (
+      text.includes("cmim") ||
+      text.includes("çmim") ||
+      text.includes("kushton") ||
+      text.includes("paket")
+    ) {
+      return "Çmimet fillojnë nga 250€ për një faqe prezantuese. Për website më të plotë ose e-commerce, mund të kërkosh ofertë te forma e kontaktit.";
+    }
+
+    if (
+      text.includes("ecommerce") ||
+      text.includes("dyqan") ||
+      text.includes("online") ||
+      text.includes("produkte")
+    ) {
+      return "Po, mund të krijoj website e-commerce me produkte, kategori, porosi, panel administrimi dhe integrim me WhatsApp ose pagesa online.";
+    }
+
+    if (
+      text.includes("seo") ||
+      text.includes("google") ||
+      text.includes("rendit")
+    ) {
+      return "Website-et optimizohen për SEO bazik, shpejtësi, strukturë të pastër dhe indeksim më të mirë në Google.";
+    }
+
+    if (
+      text.includes("kontakt") ||
+      text.includes("whatsapp") ||
+      text.includes("telefon") ||
+      text.includes("email")
+    ) {
+      return "Mund të më kontaktosh direkt nga forma e kontaktit ose nga butoni WhatsApp në faqe.";
+    }
+
+    if (
+      text.includes("sa kohe") ||
+      text.includes("koh") ||
+      text.includes("dite") ||
+      text.includes("ditë")
+    ) {
+      return "Një website i thjeshtë zakonisht realizohet për 3–5 ditë pune. Projektet më të avancuara kërkojnë 7–20 ditë, në varësi të kërkesave.";
+    }
+
+    return "Faleminderit! Për një përgjigje më të saktë, më trego çfarë lloj website të duhet: prezantues, portfolio, e-commerce apo website biznesi?";
+  };
+
+  const sendMessage = (e) => {
     e.preventDefault();
 
     if (!input.trim()) return;
@@ -28,37 +79,15 @@ function ChatBot() {
     setInput("");
     setLoading(true);
 
-    try {
-      const response = await fetch("http://localhost:5000/api/chat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          message: currentInput,
-        }),
-      });
+    setTimeout(() => {
+      const botMessage = {
+        from: "bot",
+        text: getBotReply(currentInput),
+      };
 
-      const data = await response.json();
-
-      setMessages((prev) => [
-        ...prev,
-        {
-          from: "bot",
-          text: data.reply,
-        },
-      ]);
-    } catch (error) {
-      setMessages((prev) => [
-        ...prev,
-        {
-          from: "bot",
-          text: "Ndodhi një problem me AI assistant. Ju lutem provoni përsëri.",
-        },
-      ]);
-    } finally {
+      setMessages((prev) => [...prev, botMessage]);
       setLoading(false);
-    }
+    }, 700);
   };
 
   return (
@@ -86,11 +115,7 @@ function ChatBot() {
               </div>
             ))}
 
-            {loading && (
-              <div className="chat-message bot">
-                Duke menduar...
-              </div>
-            )}
+            {loading && <div className="chat-message bot">Duke menduar...</div>}
           </div>
 
           <form className="chatbot-form" onSubmit={sendMessage}>
