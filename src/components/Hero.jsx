@@ -29,7 +29,7 @@ function Hero() {
           </p>
 
           <div className="hero-buttons">
-            <a href="#contact" className="primary-btn">
+            <a href="#contact-form" className="primary-btn">
               Fillo Projektin
             </a>
 
